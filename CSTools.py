@@ -7,23 +7,28 @@ Capstone Project: Product Clustering
 
 Functions: by kay Delventhal
     path_gen(name,PATH,silent=False)
+    return: path
+
     write_dict(name,data,PATH,silent=False)
+    return: -
+
     read_dict(name,PATH,silent=False)
+    return: data
 
 Functions: Courtesy of ...
-    centroid_histogram(clt):
+    centroid_histogram(clt)
     rgb2hsv(rgb)
-    hsv2rgb(hsv):
-    rgb_hue(rgb, s=1):
-    rgb_saturation(rgb, s=1):
-    rgb_value(rgb, s=1):
-    rgb_hsv(rgb, s=1, dhue=1, dsat=1, dval=1):
-    rgb_to_hsv(r, g, b):
-    hsv_to_rgb(h, s, v):
-    rgb_to_hsl(r, g, b):
-    hsl_to_rgb(h, s, l):
-    hsv_to_hsl(h, s, v):
-    hsl_to_hsv(h, s, l):
+    hsv2rgb(hsv)
+    rgb_hue(rgb, s=1)
+    rgb_saturation(rgb, s=1)
+    rgb_value(rgb, s=1)
+    rgb_hsv(rgb, s=1, dhue=1, dsat=1, dval=1)
+    rgb_to_hsv(r, g, b)
+    hsv_to_rgb(h, s, v)
+    rgb_to_hsl(r, g, b)
+    hsl_to_rgb(h, s, l)
+    hsv_to_hsl(h, s, v)
+    hsl_to_hsv(h, s, l)
 """
 
 __author__  = "Kay Delventhal"
@@ -41,6 +46,15 @@ import math
 
 # to create project sub folders
 def path_gen(name,PATH,silent=False):
+    """
+    path_gen: creates project path and creates folder
+    input:
+        name  : of folder
+        PATH  : project path
+        silent: if False no print()
+    output:
+        path: new path (incl. folder)
+    """
     if len(name):
         path = PATH+name+'/'
     else:
@@ -53,6 +67,16 @@ def path_gen(name,PATH,silent=False):
 
 # function to store python dict()
 def write_dict(name,data,PATH,silent=False):
+    """
+    write_dict: wirte dict() into pickle file
+    input:
+        name  : for file
+        data  : dict() to save
+        PATH  : file path
+        silent: if False no print()
+    output:
+        path: new path (incl. folder)
+    """
     path = PATH+name+'.pickle'
     with open(path, 'wb') as fp:
         pickle.dump(data, fp, protocol=4)
@@ -61,6 +85,15 @@ def write_dict(name,data,PATH,silent=False):
         
 # function to load python dict()
 def read_dict(name,PATH,silent=False):
+    """
+    write_dict: read dict() from pickle file
+    input:
+        name  : of file
+        PATH  : file path
+        silent: if False no print()
+    output:
+        path: dict() or None
+    """
     path = PATH+name+'.pickle'
     if os.path.isfile(path):
         with open(path, 'rb') as fp:

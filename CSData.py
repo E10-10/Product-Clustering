@@ -5,30 +5,19 @@
 CSData.py: Collection of tools for cgn-data-21-1 
 Capstone Project: Product Clustering
 
-    LBLGRP = 11014
-    RSEED = 42
+Functions:
+    my_setup(work_path              ='/output',
+             input_path_train_image ='/shopee-product-matching/train_images' , 
+             input_path_test_image  ='/shopee-product-matching/test_images' ,
+             input_path_train_csv   ='/shopee-product-matching/train.csv',
+             input_path_test_csv    ='/shopee-product-matching/test.csv',
+             input_path_sasu_csv    ='/shopee-product-matching/sample_submission.csv',
+             n_of_label_groups      =LBLGRP,
+             RSEED = 42)
+    return: dict_setup
 
-Functions: by Elias
-    def my_setup(work_path              ='/output',
-                 input_path_train_image ='/shopee-product-matching/train_images' , 
-                 input_path_test_image  ='/shopee-product-matching/test_images' ,
-                 input_path_train_csv   ='/shopee-product-matching/train.csv',
-                 input_path_test_csv    ='/shopee-product-matching/test.csv',
-                 input_path_sasu_csv    ='/shopee-product-matching/sample_submission.csv',
-                 n_of_label_groups      =LBLGRP,
-                 RSEED = 42):
-        dict_setup={'work_path'        :work_path,
-                    'input_path_train_image':input_path_train_image,
-                    'input_path_test_image' :input_path_test_image,
-                    'input_path_train_csv'  :input_path_train_csv,
-                    'input_path_test_csv'   :input_path_test_csv,
-                    'input_path_sasu_csv'   :input_path_test_csv,
-                    'n_of_label_groups'     :n_of_label_groups,
-                    'RSEED':RSEED}
-        return dict_setup
-
-def my_begin(dict_setup):
-    return dict_begin
+    my_begin(dict_setup)
+    return: dict_begin
 """
 
 __author__  = "Elias Büchner"
